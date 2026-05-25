@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Map — Projekty wewnętrzne Delivery | BusinessWeb</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #F2F4F6;
+    color: #202020;
+    min-height: 100vh;
+    padding: 40px 48px 60px;
+  }
+
+  .bw-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .bw-logo-text {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #29B29B;
+    letter-spacing: .04em;
+  }
+
+  .bw-doc-title { }
+  .bw-doc-title .eyebrow {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #29B29B;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .bw-doc-title h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #202020;
+    line-height: 1.2;
+  }
+  .bw-doc-title .sub {
+    font-size: 9pt;
+    color: #888888;
+    margin-top: 4px;
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 9pt; color: #555555; }
+  .leg-bar { width: 22px; height: 9px; border-radius: 4px; background: #29B29B; }
+  .leg-ms-done { width: 11px; height: 11px; border-radius: 2px; transform: rotate(45deg); background: #C0C0C0; }
+  .leg-ms-todo { width: 11px; height: 11px; border-radius: 2px; transform: rotate(45deg); background: #F84013; }
+  .leg-today { width: 2px; height: 16px; background: #F84013; }
+
+  .gantt-wrap {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #D1D5DB;
+    overflow: hidden;
+  }
+
+  .gantt-inner {
+    overflow-x: auto;
+  }
+
+  table.gantt {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 900px;
+  }
+
+  .gantt thead tr th {
+    background: #29B29B;
+    color: #FFFFFF;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 10px 0;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .gantt thead tr th.label-col {
+    text-align: left;
+    padding-left: 18px;
+    width: 200px;
+    min-width: 200px;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  .gantt thead tr th.month-col {
+    width: 110px;
+    min-width: 110px;
+  }
+  .gantt thead tr th.month-col.alt {
+    background: #22A08C;
+  }
+
+  .gantt tbody tr {
+    border-bottom: 1px solid #F2F4F6;
+  }
+  .gantt tbody tr:last-child { border-bottom: none; }
+  .gantt tbody tr:hover { background: #F9FAFB; }
+
+  td.proj-label {
+    width: 200px;
+    min-width: 200px;
+    padding: 14px 14px 14px 18px;
+    border-right: 1px solid #D1D5DB;
+    vertical-align: middle;
+  }
+  .proj-name {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #202020;
+    line-height: 1.3;
+  }
+  .proj-meta {
+    font-size: 8pt;
+    color: #888888;
+    margin-top: 2px;
+  }
+  .proj-owner {
+    display: inline-block;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #29B29B;
+    margin-top: 4px;
+    background: #E8FBF6;
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+
+  td.month-cell {
+    width: 110px;
+    min-width: 110px;
+    padding: 0;
+    border-right: 1px solid #F2F4F6;
+    vertical-align: middle;
+    position: relative;
+    height: 72px;
+  }
+  td.month-cell.alt-col { background: #FAFAFA; }
+
+  .bar-segment {
+    position: absolute;
+    height: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #29B29B;
+    border-radius: 4px;
+    z-index: 1;
+  }
+
+  .ms-dot {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 2px solid #FFFFFF;
+    z-index: 3;
+    cursor: pointer;
+    transition: transform .15s;
+  }
+  .ms-dot:hover {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.3);
+    filter: brightness(1.15);
+  }
+  .ms-dot.todo { background: #F84013; }
+  .ms-dot.done { background: #C0C0C0; }
+
+  .today-col-line {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: #F84013;
+    z-index: 4;
+    pointer-events: none;
+  }
+  .today-col-line::before {
+    content: 'dziś';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 7pt;
+    font-weight: 700;
+    color: #F84013;
+    white-space: nowrap;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+
+  .tooltip {
+    position: fixed;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 9px 13px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 8.5pt;
+    z-index: 9999;
+    max-width: 230px;
+    pointer-events: none;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .tt-title { font-weight: 700; color: #202020; margin-bottom: 4px; line-height: 1.3; }
+  .tt-date { color: #888888; font-size: 8pt; margin-bottom: 6px; }
+  .tt-status { display: inline-block; font-size: 7.5pt; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+  .tt-status.done { background: #F2F4F6; color: #888888; }
+  .tt-status.todo { background: #FDE4E3; color: #F84013; }
+  .tt-toggle { margin-top: 8px; font-size: 7.5pt; color: #888888; }
+
+  .ms-checkbox { display: none; }
+
+  .footer-bar {
+    margin-top: 28px;
+    border-top: 1px solid #D1D5DB;
+    padding-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-note { font-size: 8pt; color: #888888; font-style: italic; }
+  .footer-brand { font-size: 8.5pt; font-weight: 700; color: #29B29B; }
+</style>
+</head>
+<body>
+
+<div class="bw-header">
+  <div class="bw-doc-title">
+    <div class="eyebrow">Projekty wewnętrzne</div>
+    <h1>Road Map — Delivery</h1>
+    <div class="sub">Kamienie milowe · maj – grudzień 2026</div>
+  </div>
+  <div class="bw-logo-text">BusinessWeb</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="leg-bar"></div> pasek projektu</div>
+  <div class="legend-item"><div class="leg-ms-done"></div> kamień milowy — wykonany</div>
+  <div class="legend-item"><div class="leg-ms-todo"></div> kamień milowy — do wykonania</div>
+  <div class="legend-item"><div class="leg-today"></div> dziś</div>
+  <div class="legend-item" style="margin-left:auto;font-size:8pt;color:#888;font-style:italic;">Kliknij romb, aby oznaczyć jako wykonany / niewykonany</div>
+</div>
+
+<div class="gantt-wrap">
+  <div class="gantt-inner">
+    <table class="gantt" id="gantt"></table>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-note">Dokument wewnętrzny BusinessWeb · Ostatnia aktualizacja: maj 2026</div>
+  <div class="footer-brand">businessweb.pl</div>
+</div>
+
+<div class="tooltip" id="tooltip">
+  <div class="tt-title" id="tt-title"></div>
+  <div class="tt-date" id="tt-date"></div>
+  <div id="tt-status-wrap"></div>
+  <div class="tt-toggle">Kliknij, aby zmienić status</div>
+</div>
+
+<script>
+const MONTHS = [
+  {name:'maj 2026',   y:2026, m:4},
+  {name:'czerwiec',   y:2026, m:5},
+  {name:'lipiec',     y:2026, m:6},
+  {name:'sierpień',   y:2026, m:7},
+  {name:'wrzesień',   y:2026, m:8},
+  {name:'październik',y:2026, m:9},
+  {name:'listopad',   y:2026, m:10},
+  {name:'grudzień',   y:2026, m:11},
+];
+
+const RANGE_START = new Date(2026,4,1);
+const RANGE_END   = new Date(2026,11,31);
+const TOTAL = RANGE_END - RANGE_START;
+
+function pct(date){
+  return Math.max(0, Math.min(100, (date - RANGE_START) / TOTAL * 100));
+}
+
+function monthPct(mo){
+  const s = new Date(mo.y, mo.m, 1);
+  const e = new Date(mo.y, mo.m+1, 1);
+  return { start: pct(s), end: pct(e) };
+}
+
+const TODAY = new Date(2026,4,25);
+
+const PROJECTS = [
+  {
+    name:'Konfig Jiry z Optimatis',
+    owner:'Dominika',
+    dates:'22 kwi – 15 lip 2026',
+    bar:{s:new Date(2026,4,1), e:new Date(2026,6,15)},
+    milestones:[
+      {id:'j1', date:new Date(2026,4,25), label:'Akceptacja propozycji Optimatis', done:true},
+      {id:'j2', date:new Date(2026,5,15), label:'Zakończenie konfiguracji przez Optimatis', done:true},
+      {id:'j3', date:new Date(2026,5,19), label:'Dokumentacja procesowa odebrana', done:false},
+      {id:'j4', date:new Date(2026,5,26), label:'Testy i akceptacja / zmiany', done:false},
+      {id:'j5', date:new Date(2026,5,30), label:'Ustalenie dat szkoleń', done:false},
+      {id:'j6', date:new Date(2026,6,7),  label:'Przeprowadzenie szkoleń', done:false},
+      {id:'j7', date:new Date(2026,6,15), label:'Samodzielna praca w Jirze', done:false},
+    ]
+  },
+  {
+    name:'Automatyzacja w Delivery',
+    owner:'Dominika / Mikołaj',
+    dates:'18 maj – 24 lip 2026',
+    bar:{s:new Date(2026,4,18), e:new Date(2026,6,24)},
+    milestones:[
+      {id:'a1', date:new Date(2026,5,12), label:'Przekazanie wytycznych Mikołajowi', done:false},
+      {id:'a2', date:new Date(2026,5,15), label:'Rozpoczęcie budowy strony', done:false},
+      {id:'a3', date:new Date(2026,6,3),  label:'Produkt v1 do testów delivery', done:false},
+      {id:'a4', date:new Date(2026,6,10), label:'Testy delivery i lista poprawek', done:false},
+      {id:'a5', date:new Date(2026,6,22), label:'Poprawki i nowe funkcjonalności', done:false},
+      {id:'a6', date:new Date(2026,6,24), label:'Odbiór i start prowadzenia projektów w narzędziu', done:false},
+    ]
+  },
+  {
+    name:'Center of Excellence',
+    owner:'Dominika / Ola',
+    dates:'21 maj – 30 wrz 2026',
+    bar:{s:new Date(2026,4,21), e:new Date(2026,8,30)},
+    milestones:[
+      {id:'c1', date:new Date(2026,4,22), label:'Panel Q&A v1.0 gotowy', done:true},
+      {id:'c2', date:new Date(2026,6,31), label:'Podział na sekcje tematyczne (sales, delivery, marketing, wdrożenia)', done:false},
+      {id:'c3', date:new Date(2026,7,31), label:'Mechanizm pop-up i tablica ogłoszeń', done:false},
+      {id:'c4', date:new Date(2026,8,30), label:'Wdrożenie do użytku + zasada sprawdzania CoE', done:false},
+    ]
+  },
+  {
+    name:'Standaryzacja dokumentacji',
+    owner:'Dominika / Ola',
+    dates:'21 maj – 15 lip 2026',
+    bar:{s:new Date(2026,4,21), e:new Date(2026,6,15)},
+    milestones:[
+      {id:'s1', date:new Date(2026,4,22), label:'Tablica inwentaryzacyjna gotowa', done:true},
+      {id:'s2', date:new Date(2026,5,15), label:'Lista obowiązkowych dokumentów zdefiniowana', done:false},
+      {id:'s3', date:new Date(2026,6,15), label:'Nowy standard stworzony i wdrożony', done:false},
+    ]
+  },
+];
+
+const msState = {};
+PROJECTS.forEach(p => p.milestones.forEach(ms => msState[ms.id] = ms.done));
+
+function buildGantt(){
+  const table = document.getElementById('gantt');
+  table.innerHTML = '';
+
+  const thead = document.createElement('thead');
+  const htr = document.createElement('tr');
+  const th0 = document.createElement('th');
+  th0.className = 'label-col';
+  th0.textContent = 'Projekt';
+  htr.appendChild(th0);
+  MONTHS.forEach((mo,i) => {
+    const th = document.createElement('th');
+    th.className = 'month-col' + (i%2?' alt':'');
+    th.textContent = mo.name;
+    htr.appendChild(th);
+  });
+  thead.appendChild(htr);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+
+  PROJECTS.forEach(proj => {
+    const tr = document.createElement('tr');
+
+    const tdLabel = document.createElement('td');
+    tdLabel.className = 'proj-label';
+    tdLabel.innerHTML = `<div class="proj-name">${proj.name}</div><div class="proj-meta">${proj.dates}</div><div class="proj-owner">${proj.owner}</div>`;
+    tr.appendChild(tdLabel);
+
+    MONTHS.forEach((mo,mi) => {
+      const td = document.createElement('td');
+      td.className = 'month-cell' + (mi%2?' alt-col':'');
+      td.style.position = 'relative';
+
+      const moStart = new Date(mo.y, mo.m, 1);
+      const moEnd   = new Date(mo.y, mo.m+1, 1);
+      const moLen   = moEnd - moStart;
+
+      const barS = proj.bar.s < moEnd && proj.bar.e > moStart;
+      if(barS){
+        const segStart = Math.max(proj.bar.s, moStart);
+        const segEnd   = Math.min(proj.bar.e, moEnd);
+        const left  = ((segStart - moStart) / moLen * 100).toFixed(2)+'%';
+        const width = ((segEnd   - segStart)/ moLen * 100).toFixed(2)+'%';
+        const bar = document.createElement('div');
+        bar.className = 'bar-segment';
+        bar.style.left = left;
+        bar.style.width = width;
+        td.appendChild(bar);
+      }
+
+      if(TODAY >= moStart && TODAY < moEnd){
+        const tleft = ((TODAY - moStart) / moLen * 100).toFixed(2)+'%';
+        const tline = document.createElement('div');
+        tline.className = 'today-col-line';
+        tline.style.left = tleft;
+        td.appendChild(tline);
+      }
+
+      proj.milestones.forEach(ms => {
+        if(ms.date >= moStart && ms.date < moEnd){
+          const mleft = ((ms.date - moStart) / moLen * 100).toFixed(2)+'%';
+          const dot = document.createElement('div');
+          dot.className = 'ms-dot ' + (msState[ms.id] ? 'done' : 'todo');
+          dot.style.left = mleft;
+          dot.dataset.id = ms.id;
+          dot.dataset.label = ms.label;
+          dot.dataset.date = ms.date.toLocaleDateString('pl-PL',{day:'numeric',month:'long',year:'numeric'});
+
+          dot.addEventListener('mouseenter', e => showTip(e, ms.id, ms.label, dot.dataset.date));
+          dot.addEventListener('mousemove',  e => moveTip(e));
+          dot.addEventListener('mouseleave', hideTip);
+          dot.addEventListener('click', e => {
+            e.stopPropagation();
+            msState[ms.id] = !msState[ms.id];
+            buildGantt();
+          });
+
+          td.appendChild(dot);
+        }
+      });
+
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
+}
+
+const tooltip = document.getElementById('tooltip');
+const ttTitle = document.getElementById('tt-title');
+const ttDate  = document.getElementById('tt-date');
+const ttSW    = document.getElementById('tt-status-wrap');
+
+function showTip(e, id, label, dateStr){
+  ttTitle.textContent = label;
+  ttDate.textContent  = dateStr;
+  const done = msState[id];
+  ttSW.innerHTML = `<span class="tt-status ${done?'done':'todo'}">${done?'Wykonany':'Do wykonania'}</span>`;
+  tooltip.style.display = 'block';
+  moveTip(e);
+}
+function moveTip(e){
+  let x = e.clientX + 14, y = e.clientY - 12;
+  if(x + 240 > window.innerWidth) x = e.clientX - 254;
+  tooltip.style.left = x+'px';
+  tooltip.style.top  = y+'px';
+}
+function hideTip(){ tooltip.style.display = 'none'; }
+
+buildGantt();
+</script>
+</body>
+</html>
