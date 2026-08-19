@@ -8,13 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --teal:#29B29B;--teal-dark:#1a7a6e;--teal-glow:rgba(41,178,155,0.12);
-    --teal-subtle:rgba(41,178,155,0.08);--teal-border:rgba(41,178,155,0.28);
-    --amber:#E1B636;--amber-subtle:rgba(225,182,54,0.10);--amber-border:rgba(225,182,54,0.28);
-    --black:#0a0c0c;--ink:#1a1a1a;--text:#2c2c2c;--muted:#5a5a5a;--faint:#9a9a9a;
-    --surface:#ffffff;--page:#f4f5f7;--border:rgba(0,0,0,0.08);--border-strong:rgba(0,0,0,0.14);
-  }
+  :root{--teal:#29B29B;--teal-dark:#1a7a6e;--teal-glow:rgba(41,178,155,0.12);--teal-subtle:rgba(41,178,155,0.08);--teal-border:rgba(41,178,155,0.28);--amber:#E1B636;--amber-subtle:rgba(225,182,54,0.10);--amber-border:rgba(225,182,54,0.28);--black:#0a0c0c;--ink:#1a1a1a;--text:#2c2c2c;--muted:#5a5a5a;--faint:#9a9a9a;--surface:#ffffff;--page:#f4f5f7;--border:rgba(0,0,0,0.08);--border-strong:rgba(0,0,0,0.14)}
   html{scroll-behavior:smooth}
   body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--page);color:var(--text);min-height:100vh;padding:0 0 100px}
   .hero{background:var(--black);padding:72px 40px 64px;position:relative;overflow:hidden;text-align:center}
@@ -110,10 +104,10 @@
     </div>
     <div class="hero-date-pill">
       <span class="hero-date-dot"></span>
-      Stan na lipiec 2026
+      Stan na sierpie&#324; 2026
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">35</span><span class="stat-label">Lekcji</span></div>
+      <div class="stat"><span class="stat-num">43</span><span class="stat-label">Lekcji</span></div>
       <div class="stat"><span class="stat-num">12</span><span class="stat-label">Kategorii</span></div>
     </div>
   </div>
@@ -125,7 +119,6 @@
     <div class="section-pill fail">&#9889; Por&#261;&#380;ki &amp; trudno&#347;ci</div>
     <div class="section-line"></div>
   </div>
-
   <div class="accordion-group fail-section">
     
     <div class="category" id="cat-1">
@@ -213,7 +206,7 @@
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
-            <p class="lesson-content-text">Jeśli klient rozlicza nas za pełne Discovery, ale sam nie dostarcza struktur organizacyjnych ani decyzji biznesowych, flagować pisemnie, że wynik pracy będzie dla niego bezwartościowy. Nie wchodzić w kolejne kroki zakresu, dopóki klient nie potwierdzi podstaw (struktura, własność procesów, kierunek) — inaczej zespół wykonuje pracę rozliczaną jak Discovery bez możliwości jej dowiezienia.</p>
+            <p class="lesson-content-text">Jeśli klient rozlicza nas za pełne Discovery, ale sam nie dostarcza struktur organizacyjnych ani decyzji biznesowych, flagować pisemnie, że wynik pracy będzie dla niego bezwartościowy. Nie wchodzić w kolejne kroki zakresu, dopóki klient nie potwierdzi podstaw — inaczej zespół wykonuje pracę rozliczaną jak Discovery bez możliwości jej dowiezienia.</p>
           </div></div></div>
         </div>
         <div class="lesson" id="l9">
@@ -248,7 +241,7 @@
     <div class="category" id="cat-3">
       <button class="cat-btn" onclick="toggleCat('cat-3')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12v8H9l-3 2.5V11H2z"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Komunikacja i relacja z klientem</div><div class="cat-count">3 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Komunikacja i relacja z klientem</div><div class="cat-count">5 lekcji</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-3"><div class="cat-body-inner">
@@ -279,17 +272,35 @@
             <p class="lesson-content-text">Przy pracy na dużych wolumenach danych drobne niezgodności są naturalne — z góry komunikować klientowi tę „błędogodność" i rozdzielać: co jest faktycznym błędem do naprawy, a co działa poprawnie. Chroni to wkład zespołu przed podważeniem całości na bazie wyrywkowych usterek.</p>
           </div></div></div>
         </div>
+        <div class="lesson" id="l15">
+          <div class="lesson-header" onclick="toggleLesson('l15','cat-3')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Brak zakotwiczenia członka zespołu do projektu — chaos informacyjny</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Gdy jedna osoba jest odpowiedzialna za projekt, a pozostali członkowie zespołu nie znają szczegółów ani nie są zakotwiczeni w decyzjach, pojawia się chaos — klient kieruje pytania na wszystkie strony, każdy udziela innej odpowiedzi. Zakotwiczyć zespół poprzez handoff i dokumentację podczas urlopu czy nieobecności key person.</p>
+          </div></div></div>
+        </div>
+        <div class="lesson" id="l16">
+          <div class="lesson-header" onclick="toggleLesson('l16','cat-3')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Klient ze słabą strukturą decyzyjną i brakiem przywództwa — chaos operacyjny</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Gdy brygada po stronie klienta nie ma jasnej struktury przywództwa i każdy działa ad hoc bez koordynacji, wskaźnik jakości spada drastycznie. Bez menedżera czy lidera, który nadzoruje kompetencję i kończy pracę, zespół działa chaotycznie. Zaproponować klientowi wzmocnienie struktury decyzyjnej lub zaakceptować dłuższy harmonogram na bazie tego chaosu.</p>
+          </div></div></div>
+        </div>
       </div></div>
     </div>
     <div class="category" id="cat-4">
       <button class="cat-btn" onclick="toggleCat('cat-4')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="11" rx="1.5"/><line x1="2" y1="6" x2="14" y2="6"/><line x1="5" y1="1" x2="5" y2="3"/><line x1="11" y1="1" x2="11" y2="3"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Harmonogram i planowanie</div><div class="cat-count">4 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Harmonogram i planowanie</div><div class="cat-count">5 lekcji</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-4"><div class="cat-body-inner">
-        <div class="lesson" id="l15">
-          <div class="lesson-header" onclick="toggleLesson('l15','cat-4')" role="button" tabindex="0">
+        <div class="lesson" id="l17">
+          <div class="lesson-header" onclick="toggleLesson('l17','cat-4')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Planowanie harmonogramu niemożliwe przy kliencie bez wewnętrznych decyzji</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -297,8 +308,8 @@
             <p class="lesson-content-text">Jeśli klient sam nie podjął decyzji biznesowych (np. co do zakresu, struktury organizacyjnej, przyszłości systemów), nie ma podstaw do budowania twardego harmonogramu — zamiast próbować go wybetonować, skupić się na domykaniu kamieni milowych w miarę ich dojrzewania po stronie klienta. Sytuację dokumentować pisemnie jako ryzyko projektowe.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l16">
-          <div class="lesson-header" onclick="toggleLesson('l16','cat-4')" role="button" tabindex="0">
+        <div class="lesson" id="l18">
+          <div class="lesson-header" onclick="toggleLesson('l18','cat-4')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Spotkania ad hoc ze strony klienta rozwalają planowanie pracy własnego zespołu</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -306,17 +317,17 @@
             <p class="lesson-content-text">Wpisać do governance lub umowy wymóg zgłaszania spotkań z minimalnym wyprzedzeniem (np. 2–3 dni robocze). W razie braku takiego zapisu w umowie — komunikować oczekiwanie wprost do opiekuna po stronie klienta. Sprawdzić umowę pod kątem asymetrii obowiązków stron w tym zakresie.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l17">
-          <div class="lesson-header" onclick="toggleLesson('l17','cat-4')" role="button" tabindex="0">
-            <div class="lesson-diamond"></div><span class="lesson-title">Brak dostępności uczestników po stronie klienta w systemie blokuje konfigurację i generuje powtórną pracę</span>
+        <div class="lesson" id="l19">
+          <div class="lesson-header" onclick="toggleLesson('l19','cat-4')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Brak dostępności uczestników po stronie klienta blokuje konfigurację i generuje powtórną pracę</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
             <p class="lesson-content-text">Uzależnić przejście do kolejnych kroków konfiguracji od kompletności danych po stronie klienta (np. założone konta użytkowników). Brak gotowości operacyjnej flagować pisemnie i nie kontynuować konfiguracji elementów zależnych od brakujących zasobów.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l18">
-          <div class="lesson-header" onclick="toggleLesson('l18','cat-4')" role="button" tabindex="0">
+        <div class="lesson" id="l20">
+          <div class="lesson-header" onclick="toggleLesson('l20','cat-4')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Konfiguracja pod procesy, które klient planuje wycofać — ryzyko zmarnowanej pracy</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -324,17 +335,26 @@
             <p class="lesson-content-text">Przed rozpoczęciem konfiguracji procesów weryfikować ich stabilność biznesową po stronie klienta. Jeśli klient potwierdza tymczasowość rozwiązania — odnotować to pisemnie i wycenić jako świadomy, ograniczony czasowo zakres.</p>
           </div></div></div>
         </div>
+        <div class="lesson" id="l21">
+          <div class="lesson-header" onclick="toggleLesson('l21','cat-4')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Iteracyjne projekty bez kamieni milowych — brak możliwości budowy frameworku</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">W projektach zarządzanych elastycznie (bez stałych kamieni milowych), gdzie zakres i priorytety zmieniają się tygodniowo, nie da się zbudować uniwersalnego frameworku czy procesu. Zaakceptować to jako model (zwykle w fazie support/maintenance) i planować z elastycznością, nie z przewidywalnym przepływem pracy.</p>
+          </div></div></div>
+        </div>
       </div></div>
     </div>
     <div class="category" id="cat-5">
       <button class="cat-btn" onclick="toggleCat('cat-5')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2a3.5 3.5 0 0 0-3.26 4.76L2 12l1 2 2-1 5.24-5.24A3.5 3.5 0 1 0 10.5 2z"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Narzędzia i procesy wewnętrzne</div><div class="cat-count">2 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Narzędzia i procesy wewnętrzne</div><div class="cat-count">3 lekcje</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-5"><div class="cat-body-inner">
-        <div class="lesson" id="l19">
-          <div class="lesson-header" onclick="toggleLesson('l19','cat-5')" role="button" tabindex="0">
+        <div class="lesson" id="l22">
+          <div class="lesson-header" onclick="toggleLesson('l22','cat-5')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Retroboard zsynchronizowany z systemem taskowym — unikać podwójnej pracy</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -342,13 +362,22 @@
             <p class="lesson-content-text">Przy przygotowaniu retroboardu karty taskowe przenosić do/z Jiry zbiorczo, przez wbudowaną integrację narzędzia, zamiast ręcznie odwzorowywać statusy w dwóch miejscach. Ręczne dublowanie tej samej informacji to zmarnowany czas.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l20">
-          <div class="lesson-header" onclick="toggleLesson('l20','cat-5')" role="button" tabindex="0">
+        <div class="lesson" id="l23">
+          <div class="lesson-header" onclick="toggleLesson('l23','cat-5')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Kryteria trafiania zadań do systemu taskowego przy pracy warsztatowo-eksploracyjnej</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
-            <p class="lesson-content-text">Dla ról o charakterze odkrywczym (BPS, warsztaty) nie wymuszać pełnej struktury tasków z góry — prowadzić zadanie nadrzędne (epik), a szczegółowe taski dodawać dopiero po sklarowaniu procesów na warsztacie. Ustalić próg tego, co warto śledzić w systemie, by nie tworzyć sztuki dla sztuki.</p>
+            <p class="lesson-content-text">Dla ról o charakterze odkrywczym (BPS, warsztaty) nie wymuszać pełnej struktury tasków z góry — prowadzić zadanie nadrzędne (epik), a szczegółowe taski dodawać dopiero po sklarowaniu procesów na warsztacie. Ustalić próg tego, co warto śledzić w systemie, by nie tworzyć sztuki dla sztuki. Przy tego typu pracy chodzi o dokumentowanie postępów, a nie o pieczołowite śledzenie każdego ruchu.</p>
+          </div></div></div>
+        </div>
+        <div class="lesson" id="l24">
+          <div class="lesson-header" onclick="toggleLesson('l24','cat-5')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Dokumentacja jako warunek przejścia z fazy development do maintenance</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Na koniec fazy wdrażania wymagać normalizacji dokumentacji (architektura, procesy, konfiguracja, handoff) przed przejściem do support/maintenance. Bez dokumentacji zespół support nie ma podstaw do pracy i klient w każdej sprawie wraca do oryginalnego eksperta. Uzgodnić czas i budżet na dokumentację już w fazie design.</p>
           </div></div></div>
         </div>
       </div></div>
@@ -360,8 +389,8 @@
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-6"><div class="cat-body-inner">
-        <div class="lesson" id="l21">
-          <div class="lesson-header" onclick="toggleLesson('l21','cat-6')" role="button" tabindex="0">
+        <div class="lesson" id="l25">
+          <div class="lesson-header" onclick="toggleLesson('l25','cat-6')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Trudność z onboardingiem nowego PM-a do dynamicznego projektu</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -377,18 +406,17 @@
     <div class="section-pill win">&#10022; Sukcesy &amp; dobre praktyki</div>
     <div class="section-line"></div>
   </div>
-
   <div class="accordion-group win-section">
     
     <div class="category" id="cat-7">
       <button class="cat-btn" onclick="toggleCat('cat-7')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12v8H9l-3 2.5V11H2z"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Komunikacja i dokumentacja</div><div class="cat-count">4 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Komunikacja i dokumentacja</div><div class="cat-count">5 lekcji</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-7"><div class="cat-body-inner">
-        <div class="lesson" id="l22">
-          <div class="lesson-header" onclick="toggleLesson('l22','cat-7')" role="button" tabindex="0">
+        <div class="lesson" id="l26">
+          <div class="lesson-header" onclick="toggleLesson('l26','cat-7')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Wczesna komunikacja o niespójnościach po stronie klienta</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -396,8 +424,8 @@
             <p class="lesson-content-text">Wprost komunikować klientowi, gdy jego założenia nie mają pokrycia w rzeczywistości — takie rozmowy są możliwe i potrzebne. Odkładanie ich generuje większe problemy.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l23">
-          <div class="lesson-header" onclick="toggleLesson('l23','cat-7')" role="button" tabindex="0">
+        <div class="lesson" id="l27">
+          <div class="lesson-header" onclick="toggleLesson('l27','cat-7')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Brak osoby decyzyjnej na warsztacie — ustalenia są warunkowe</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -405,17 +433,17 @@
             <p class="lesson-content-text">Jeśli na warsztacie nie ma właściwej osoby — odnotować pisemnie, że ustalenia są warunkowe. To chroni BW i wywiera presję na klienta, żeby delegował właściwych ludzi.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l24">
-          <div class="lesson-header" onclick="toggleLesson('l24','cat-7')" role="button" tabindex="0">
+        <div class="lesson" id="l28">
+          <div class="lesson-header" onclick="toggleLesson('l28','cat-7')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Wewnętrzny „rachunek sumienia" jako obrona przed nieuzasadnioną eskalacją</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
-            <p class="lesson-content-text">Przy eskalacji ze strony klienta dot. responsywności, odtworzyć pisemnie własne czasy reakcji i treść udzielonych odpowiedzi. Udokumentowana responsywność chroni zespół, pozwala rzeczowo odpowiedzieć na zarzuty i nie brać eskalacji osobiście.</p>
+            <p class="lesson-content-text">Przy eskalacji ze strony klienta dot. responsywności, odtworzyć pisemnie własne czasy reakcji i treść udzielonych odpowiedzi. Udokumentowana responsywność chroni zespół, pozwala rzeczowo odpowiedzieć na zarzuty i nie brać eskalacji osobiście. Docelowo SLA dla obu stron współpracy powinno być zapisane w umowie.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l25">
-          <div class="lesson-header" onclick="toggleLesson('l25','cat-7')" role="button" tabindex="0">
+        <div class="lesson" id="l29">
+          <div class="lesson-header" onclick="toggleLesson('l29','cat-7')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Codzienny status do klienta jako budowanie wartości relacyjnej</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -423,17 +451,26 @@
             <p class="lesson-content-text">Regularny (nawet codzienny) status „co zrobione / co do zrobienia" przy intensywnej fazie poprawek buduje przewagę usługową i porządkuje oczekiwania. Odnotować wewnętrznie jako standard warty powtarzania — choć nie liczyć na to, że klient sam to doceni.</p>
           </div></div></div>
         </div>
+        <div class="lesson" id="l30">
+          <div class="lesson-header" onclick="toggleLesson('l30','cat-7')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Jasność budżetowa i transparencja godzin roboczych</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Utrzymywanie przejrzystej komunikacji dot. wykorzystanych godzin, pozostałego budżetu i harmonogramu rozliczenia buduje zaufanie klienta i eliminuje spory o koszty. Regularnie (np. tygodniowo) komunikuj klientowi stan budżetu, nie czekaj na koniec projektu.</p>
+          </div></div></div>
+        </div>
       </div></div>
     </div>
     <div class="category" id="cat-8">
       <button class="cat-btn" onclick="toggleCat('cat-8')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="4" r="1.5"/><circle cx="12" cy="8" r="1.5"/><circle cx="4" cy="12" r="1.5"/><line x1="5.5" y1="4" x2="12" y2="4"/><line x1="12" y1="4" x2="12" y2="6.5"/><line x1="12" y1="9.5" x2="12" y2="12"/><line x1="12" y1="12" x2="5.5" y2="12"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Procesy projektowe</div><div class="cat-count">2 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Procesy projektowe</div><div class="cat-count">3 lekcje</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-8"><div class="cat-body-inner">
-        <div class="lesson" id="l26">
-          <div class="lesson-header" onclick="toggleLesson('l26','cat-8')" role="button" tabindex="0">
+        <div class="lesson" id="l31">
+          <div class="lesson-header" onclick="toggleLesson('l31','cat-8')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Tygodniowe sprawozdania finansowe jako standard</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -441,8 +478,8 @@
             <p class="lesson-content-text">Tygodniowe sprawozdania zamiast miesięcznych jako standard przy klientach — w razie sporu można odpytywać klienta tylko z ostatniego okresu, nie z całej historii projektu. Szybka akceptacja sprawozdań przez klienta redukuje frustrację i ryzyko odkopywania starych ustaleń.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l27">
-          <div class="lesson-header" onclick="toggleLesson('l27','cat-8')" role="button" tabindex="0">
+        <div class="lesson" id="l32">
+          <div class="lesson-header" onclick="toggleLesson('l32','cat-8')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Retro przy kamieniach milowych, nie tylko na końcu projektu</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -450,17 +487,26 @@
             <p class="lesson-content-text">Przy projektach wielomiesięcznych robić retro cyklicznie lub przy kamieniach milowych, a nie dopiero na zamknięciu. Na końcu duże rzeczy się zapomina, a świeże wnioski są bogatsze i możliwe do wdrożenia jeszcze w trakcie projektu.</p>
           </div></div></div>
         </div>
+        <div class="lesson" id="l33">
+          <div class="lesson-header" onclick="toggleLesson('l33','cat-8')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Handoff i dokumentacja jako standard podczas urlopów</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Przed urlopem key person sporządzić dokładny handoff: status projektu, kluczowe podejmowane decyzje, lista kontaktów, priorytety na czas nieobecności. Przekazać to drugiej osobie na zespole. Brak handoff-u generuje zamieszanie i niektóre taski zamrażają się aż do powrotu.</p>
+          </div></div></div>
+        </div>
       </div></div>
     </div>
     <div class="category" id="cat-9">
       <button class="cat-btn" onclick="toggleCat('cat-9')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="4" height="5" rx="1"/><rect x="6" y="5" width="4" height="9" rx="1"/><rect x="10" y="2" width="4" height="12" rx="1"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Architektura i rozwiązania techniczne</div><div class="cat-count">3 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Architektura i rozwiązania techniczne</div><div class="cat-count">4 lekcje</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-9"><div class="cat-body-inner">
-        <div class="lesson" id="l28">
-          <div class="lesson-header" onclick="toggleLesson('l28','cat-9')" role="button" tabindex="0">
+        <div class="lesson" id="l34">
+          <div class="lesson-header" onclick="toggleLesson('l34','cat-9')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Projektowanie integracji pod re-używalność</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -468,8 +514,8 @@
             <p class="lesson-content-text">Budując integrację lub rozwiązanie po raz pierwszy w danej skali, projektować je modułowo i uniwersalnie (powtarzalne wzorce, łatwość modyfikacji bez przepisywania połowy kodu), by dało się je wykorzystać w kolejnych projektach. Traktować pierwszy duży projekt jako inwestycję w bazę pod następne.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l29">
-          <div class="lesson-header" onclick="toggleLesson('l29','cat-9')" role="button" tabindex="0">
+        <div class="lesson" id="l35">
+          <div class="lesson-header" onclick="toggleLesson('l35','cat-9')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Preferencja standardowych modułów platformy nad customem</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -477,8 +523,8 @@
             <p class="lesson-content-text">Przy wdrożeniach opierać się w miarę możliwości o standardowe moduły platformy, a nie custom. Ograniczać custom tam, gdzie standard wystarcza; koncepcję warto przetestować w kolejnym projekcie tego typu.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l30">
-          <div class="lesson-header" onclick="toggleLesson('l30','cat-9')" role="button" tabindex="0">
+        <div class="lesson" id="l36">
+          <div class="lesson-header" onclick="toggleLesson('l36','cat-9')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Dokumentacja techniczna jako aktywo dla kolejnych projektów</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -486,22 +532,40 @@
             <p class="lesson-content-text">Solidna, szeroka dokumentacja wypracowana w trakcie wdrożenia (diagramy BPMN/UML, opisy pól, mapowania) staje się bazą wiedzy dla następnych wdrożeń. Traktować jej tworzenie jako inwestycję, nie koszt.</p>
           </div></div></div>
         </div>
+        <div class="lesson" id="l37">
+          <div class="lesson-header" onclick="toggleLesson('l37','cat-9')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">MVP jako wiarygodna demonstracja możliwego zakresu</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Przy projektach gdzie klient iteracyjnie doskonali i zmienia wymogi, zbuduj MVP wystarczający, aby pokazać możliwości systemu. MVP buduje zaufanie do koncepcji i redukuje ryzyko niepotrzebnych prac. Prezentacja rzeczywistego rozwiązania (nie tylko na slajdach, ale jako środowisko operacyjne) jest bardziej przekonująca.</p>
+          </div></div></div>
+        </div>
       </div></div>
     </div>
     <div class="category" id="cat-10">
       <button class="cat-btn" onclick="toggleCat('cat-10')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 2a3.5 3.5 0 0 0-3.26 4.76L2 12l1 2 2-1 5.24-5.24A3.5 3.5 0 1 0 10.5 2z"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Narzędzia</div><div class="cat-count">1 lekcja</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Narzędzia</div><div class="cat-count">2 lekcje</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-10"><div class="cat-body-inner">
-        <div class="lesson" id="l31">
-          <div class="lesson-header" onclick="toggleLesson('l31','cat-10')" role="button" tabindex="0">
+        <div class="lesson" id="l38">
+          <div class="lesson-header" onclick="toggleLesson('l38','cat-10')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Fireflies.ai jako standard dokumentowania warsztatów</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
             <p class="lesson-content-text">Fireflies bardzo skraca czas dokumentowania. Rekomendowane jako standard BW przy wszystkich warsztatach klienckich. Nawet jeśli klient pierwotnie nie wyraża zgody, warto wracać do tej rozmowy i wyjaśniać ograniczenia innych narzędzi, które już przetestowaliśmy.</p>
+          </div></div></div>
+        </div>
+        <div class="lesson" id="l39">
+          <div class="lesson-header" onclick="toggleLesson('l39','cat-10')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Zakaz cloudowych wtyczek bez zgody klienta</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Nie podpinaj narzędzi trzecich (cloud, AI, external services) do systemu klienta bez jawnej zgody w umowie. Nawet jeśli klient korzysta z nich w innym miejscu, brak formalnego zapisu tworzy ryzyko prawne i sporu. Uzyskaj pisemną zgodę na każde narzędzie, które ktoś potem uzna za „obce".</p>
           </div></div></div>
         </div>
       </div></div>
@@ -513,8 +577,8 @@
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-11"><div class="cat-body-inner">
-        <div class="lesson" id="l32">
-          <div class="lesson-header" onclick="toggleLesson('l32','cat-11')" role="button" tabindex="0">
+        <div class="lesson" id="l40">
+          <div class="lesson-header" onclick="toggleLesson('l40','cat-11')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Relacja z opiekunem po stronie dostawcy jako źródło wczesnych sygnałów</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -522,8 +586,8 @@
             <p class="lesson-content-text">Utrzymywać partnerską, dyskretną relację z opiekunem po stronie dostawcy platformy HubSpot — daje ona wczesne informacje o eskalacjach, intencjach klienta i ruchach konkurencji, zanim staną się problemem. Traktować dostawcę jako partnera, a nie tylko źródło licencji.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l33">
-          <div class="lesson-header" onclick="toggleLesson('l33','cat-11')" role="button" tabindex="0">
+        <div class="lesson" id="l41">
+          <div class="lesson-header" onclick="toggleLesson('l41','cat-11')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Zasada jednego partnera na instancję — komunikować na wejściu</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -536,12 +600,12 @@
     <div class="category" id="cat-12">
       <button class="cat-btn" onclick="toggleCat('cat-12')" aria-expanded="false">
         <div class="cat-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2l1.8 3.6L14 6.3l-3 2.9.7 4.1L8 11.2l-3.7 2.1.7-4.1-3-2.9 4.2-.7z"/></svg></div>
-        <div class="cat-btn-content"><div class="cat-title">Jakość i relacja z klientem</div><div class="cat-count">2 lekcje</div></div>
+        <div class="cat-btn-content"><div class="cat-title">Jakość i relacja z klientem</div><div class="cat-count">3 lekcje</div></div>
         <div class="cat-chevron"><svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 5.5 7.5 9 4"/></svg></div>
       </button>
       <div class="cat-body" id="body-cat-12"><div class="cat-body-inner">
-        <div class="lesson" id="l34">
-          <div class="lesson-header" onclick="toggleLesson('l34','cat-12')" role="button" tabindex="0">
+        <div class="lesson" id="l42">
+          <div class="lesson-header" onclick="toggleLesson('l42','cat-12')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Wartość merytoryczna jako tarcza w trudnym projekcie</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
@@ -549,13 +613,22 @@
             <p class="lesson-content-text">Nawet przy dużym chaosie organizacyjnym po stronie klienta — wysoka jakość pracy technicznej (konfiguracja, warsztaty, doradztwo) buduje zaufanie i redukuje eskalacje. Klient, który widzi wartość, nie kwestionuje współpracy nawet przy problemach procesowych.</p>
           </div></div></div>
         </div>
-        <div class="lesson" id="l35">
-          <div class="lesson-header" onclick="toggleLesson('l35','cat-12')" role="button" tabindex="0">
+        <div class="lesson" id="l43">
+          <div class="lesson-header" onclick="toggleLesson('l43','cat-12')" role="button" tabindex="0">
             <div class="lesson-diamond"></div><span class="lesson-title">Potwierdzenie kompetencji przez najwyższy poziom zarządzania klienta — kapitalizować</span>
             <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
           </div>
           <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
             <p class="lesson-content-text">Jeśli najwyższy decydent po stronie klienta publicznie potwierdza kompetencje zespołu BW — odnotować to i wykorzystać jako punkt referencyjny przy ewentualnych przyszłych sporach lub negocjacjach zakresu. Takie potwierdzenie wzmacnia pozycję BW w organizacji klienta.</p>
+          </div></div></div>
+        </div>
+        <div class="lesson" id="l44">
+          <div class="lesson-header" onclick="toggleLesson('l44','cat-12')" role="button" tabindex="0">
+            <div class="lesson-diamond"></div><span class="lesson-title">Case study i referencje jako naturalny efekt zadowolenia klienta</span>
+            <div class="lesson-toggle"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="1" x2="4" y2="7"/><line x1="1" y1="4" x2="7" y2="4"/></svg></div>
+          </div>
+          <div class="lesson-content"><div class="lesson-content-overflow"><div class="lesson-content-inner">
+            <p class="lesson-content-text">Gdy projekt dochodzi do fazy maintenance w stanie zadowolenia klienta, zaproponować rozmowę o case study i referencji. Klient zadowolony chętnie da to na papierze, a to zmienia dynamikę ofertowania nowym prospektom. Moment key: klient dopiero co widzi wartość wdrożenia.</p>
           </div></div></div>
         </div>
       </div></div>
@@ -566,34 +639,14 @@
 
 <footer class="site-footer">
   <div class="footer-left">Lessons Learned &middot; BusinessWeb</div>
-  <div class="footer-right"><div class="footer-dot"></div>35 lekcji &middot; 12 kategorii</div>
+  <div class="footer-right"><div class="footer-dot"></div>43 lekcje &middot; 12 kategorii</div>
 </footer>
 
 <script>
-  function recalcCat(catId) {
-    const body = document.getElementById('body-' + catId);
-    const cat = document.getElementById(catId);
-    if (body && cat && cat.classList.contains('open')) body.style.maxHeight = body.scrollHeight + 'px';
-  }
-  function toggleCat(id) {
-    const cat = document.getElementById(id);
-    const isOpen = cat.classList.contains('open');
-    const body = document.getElementById('body-' + id);
-    const btn = cat.querySelector('.cat-btn');
-    if (isOpen) { cat.classList.remove('open'); body.style.maxHeight = '0'; btn.setAttribute('aria-expanded','false'); }
-    else { cat.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; btn.setAttribute('aria-expanded','true'); }
-  }
-  function toggleLesson(id, catId) {
-    const lesson = document.getElementById(id);
-    const isOpen = lesson.classList.contains('open');
-    const header = lesson.querySelector('.lesson-header');
-    if (isOpen) { lesson.classList.remove('open'); header.setAttribute('aria-expanded','false'); }
-    else { lesson.classList.add('open'); header.setAttribute('aria-expanded','true'); }
-    setTimeout(() => recalcCat(catId), 320);
-  }
-  document.querySelectorAll('.lesson-header').forEach(el => {
-    el.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); el.click(); } });
-  });
+  function recalcCat(catId){const body=document.getElementById('body-'+catId);const cat=document.getElementById(catId);if(body&&cat&&cat.classList.contains('open'))body.style.maxHeight=body.scrollHeight+'px';}
+  function toggleCat(id){const cat=document.getElementById(id);const isOpen=cat.classList.contains('open');const body=document.getElementById('body-'+id);const btn=cat.querySelector('.cat-btn');if(isOpen){cat.classList.remove('open');body.style.maxHeight='0';btn.setAttribute('aria-expanded','false');}else{cat.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}}
+  function toggleLesson(id,catId){const lesson=document.getElementById(id);const isOpen=lesson.classList.contains('open');const header=lesson.querySelector('.lesson-header');if(isOpen){lesson.classList.remove('open');header.setAttribute('aria-expanded','false');}else{lesson.classList.add('open');header.setAttribute('aria-expanded','true');}setTimeout(()=>recalcCat(catId),320);}
+  document.querySelectorAll('.lesson-header').forEach(el=>{el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
 </body>
 </html>
